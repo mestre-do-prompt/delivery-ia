@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Burger de Cinema | Mestre do Prompt I.A</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #FF6600;
+            --primary-glow: rgba(255, 102, 0, 0.4);
+            --bg: #050505;
+            --card-bg: #111112;
+            --text: #ffffff;
+            --text-dim: #a1a1aa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+        body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- BACKGROUND ANIMATION --- */
+        .glow {
+            position: absolute; width: 400px; height: 400px;
+            background: var(--primary); filter: blur(150px);
+            opacity: 0.15; z-index: -1; border-radius: 50%;
+        }
+
+        /* --- HERO --- */
+        .hero { padding: 100px 0 60px; text-align: center; position: relative; }
+        .badge { 
+            display: inline-block; padding: 8px 20px; background: rgba(255,102,0,0.1); 
+            border: 1px solid var(--primary); border-radius: 50px; color: var(--primary);
+            font-weight: bold; font-size: 0.9rem; margin-bottom: 25px;
+            text-transform: uppercase; letter-spacing: 2px;
+        }
+        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1; margin-bottom: 30px; }
+        h1 span { color: var(--primary); text-shadow: 0 0 20px var(--primary-glow); }
+        .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 800px; margin: 0 auto 40px; }
+
+        .cta-main {
+            display: inline-block; padding: 22px 50px; background: var(--primary);
+            color: #fff; text-decoration: none; font-weight: 900; font-size: 1.3rem;
+            border-radius: 12px; transition: 0.3s; box-shadow: 0 10px 40px var(--primary-glow);
+            text-transform: uppercase;
+        }
+        .cta-main:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+        /* --- THE PAIN (A DOR) --- */
+        .pain-section { padding: 100px 0; background: #080808; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; }
+        .section-title p { color: var(--text-dim); }
+
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .pain-card { background: var(--card-bg); padding: 40px; border-radius: 20px; border-left: 4px solid #ff4444; }
+        .pain-card i { color: #ff4444; font-size: 2rem; margin-bottom: 20px; }
+        .pain-card h3 { margin-bottom: 15px; }
+
+        /* --- THE SOLUTION (VISUAL SHOWCASE) --- */
+        .showcase { padding: 100px 0; }
+        .image-box { 
+            width: 100%; height: 500px; background: #161618; border-radius: 30px; 
+            margin-top: 40px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- BENEFITS --- */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+        .benefit-item { text-align: center; padding: 30px; }
+        .benefit-item i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+        /* --- PRICING --- */
+        .pricing { padding: 100px 0; text-align: center; }
+        .price-card {
+            max-width: 500px; margin: 0 auto; background: linear-gradient(145deg, #1a1a1c, #0a0a0b);
+            padding: 60px 40px; border-radius: 40px; border: 2px solid var(--primary);
+            box-shadow: 0 0 50px rgba(255,102,0,0.1);
+        }
+        .old-price { text-decoration: line-through; color: #ff4444; font-size: 1.5rem; }
+        .new-price { font-size: 5rem; font-weight: 900; color: #fff; margin: 10px 0; }
+        .new-price span { font-size: 1.5rem; vertical-align: middle; }
+
+        /* --- FAQ --- */
+        .faq { padding: 100px 0; max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--card-bg); margin-bottom: 15px; border-radius: 12px; padding: 25px; }
+        .faq-item h4 { margin-bottom: 10px; color: var(--primary); }
+
+        footer { padding: 50px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .price-card { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow" style="top: 0; left: 0;"></div>
+    <div class="glow" style="top: 500px; right: 0;"></div>
+
+    <div class="container">
+        <header style="padding: 20px 0; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: 900; font-size: 1.5rem;">MESTRE<span>PROMPT</span></div>
+            <a href="#preço" style="color: #fff; text-decoration: none; font-weight: bold; border: 1px solid #fff; padding: 10px 20px; border-radius: 8px;">ÁREA DO ALUNO</a>
+        </header>
+
+        <section class="hero">
+            <div class="badge">A Revolução Visual no iFood</div>
+            <h1>Sua Hamburgueria com Visual de <span>Cinema</span></h1>
+            <p>Pare de perder vendas para concorrência porque suas fotos são amadoras. Use a Engenharia de Prompts para criar imagens "Food Porn" que hipnotizam o cliente em segundos.</p>
+            <a href="#preço" class="cta-main">Quero Dominar o meu Mercado <i class="fas fa-arrow-right"></i></a>
+            
+            <div class="image-box">
+                <img src="../pdfs/capa-burger.jpg" alt="Burger de Cinema">
+            </div>
+        </section>
+
+        <section class="pain-section">
+            <div class="section-title">
+                <h2>O "Problema Invisível" do seu Delivery</h2>
+                <p>O cliente não prova seu tempero no iFood, ele come com os olhos.</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <i class="fas fa-camera-slash"></i>
+                    <h3>Fotos Amadoras</h3>
+                    <p>Luz ruim, ângulo errado e carne sem brilho passam imagem de falta de higiene e amadorismo.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Fotógrafos Caros</h3>
+                    <p>Um ensaio profissional custa R$ 1.500+. Inviável para quem atualiza o cardápio sempre.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fas fa-chart-line-down"></i>
+                    <h3>Baixa Conversão</h3>
+                    <p>Milhares de pessoas veem sua loja, mas ninguém clica. Sua foto não gera desejo imediato.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <div class="section-title">
+                <h2>O Arsenal Definitivo de 100+ Prompts</h2>
+                <p>Tudo o que você precisa para criar uma vitrine irresistível.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Rapidez Total</h3>
+                    <p>Copie, cole e gere fotos de estúdio em 30 segundos.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Hiper-Realismo</h3>
+                    <p>Imagens que ninguém dirá que foram feitas por I.A.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Variedade Infinita</h3>
+                    <p>Smash, Gourmet, Kids, Combos e muito mais.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Foco em Vendas</h3>
+                    <p>Formatos prontos para Instagram e iFood.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #111112; padding: 80px 40px; border-radius: 40px;">
+            <h2 style="text-align: center; margin-bottom: 40px;">O Que Você Vai Levar Hoje:</h2>
+            <ul style="list-style: none; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> 100+ Prompts de Elite para Burgers</li>
+                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> Guia de Configuração Leonardo.ai</li>
+                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> Segredos de Textura e Iluminação Food Porn</li>
+                <li style="margin-bottom: 15px;"><i class="fas fa-star" style="color: gold;"></i> <strong>BÔNUS:</strong> 15 Prompts de Unboxing & Delivery</li>
+                <li style="margin-bottom: 15px;"><i class="fas fa-star" style="color: gold;"></i> <strong>BÔNUS:</strong> Pack de Legendas Persuasivas</li>
+            </ul>
+        </section>
+
+        <section class="pricing" id="preço">
+            <div class="section-title">
+                <h2>Oferta Especial de Lançamento</h2>
+                <p>Acesso vitalício ao arsenal do Mestre.</p>
+            </div>
+            <div class="price-card">
+                <p class="old-price">De R$ 197,90</p>
+                <p>Por apenas</p>
+                <div class="new-price"><span>R$</span> 47,00</div>
+                <p style="margin-bottom: 30px; color: var(--text-dim);">Ou 5x de R$ 10,15*</p>
+                <a href="LINK_DO_CHECKOUT_KIWIFY" class="cta-main" style="width: 100%;">QUERO MEU PACK AGORA</a>
+                <p style="margin-top: 20px; font-size: 0.8rem;"><i class="fas fa-shield-alt"></i> Compra 100% segura e acesso imediato.</p>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2 style="text-align: center; margin-bottom: 50px;">Dúvidas Frequentes</h2>
+            <div class="faq-item">
+                <h4>Preciso saber de programação?</h4>
+                <p>Não! É apenas copiar e colar os prompts na ferramenta que eu ensino.</p>
+            </div>
+            <div class="faq-item">
+                <h4>As fotos ficam parecidas com as reais?</h4>
+                <p>Sim. O foco é hiper-realismo. Você escolhe os ingredientes no prompt para bater com o seu lanche.</p>
+            </div>
+            <div class="faq-item">
+                <h4>O acesso é por quanto tempo?</h4>
+                <p>O acesso é vitalício. Você compra uma vez e os prompts são seus para sempre.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Mestre do Prompt I.A &copy; 2026. Todos os direitos reservados.</p>
+            <p style="font-size: 0.7rem; margin-top: 10px;">Este site não tem vínculo com o Instagram ou Facebook.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

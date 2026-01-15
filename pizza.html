@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Elite Pro | O Império da Massa Perfeita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-impact { font-family: 'Montserrat', sans-serif; }
+        .bg-pizza-dark { background-color: #080202; }
+        .text-red-neon { color: #ef4444; }
+        .bg-red-neon { background-color: #ef4444; }
+        html { scroll-behavior: smooth; }
+
+        /* TRAVAS DE SEGURANÇA CONTRA BUG DE RENDERIZAÇÃO */
+        .gpu-fix {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+            will-change: transform;
+        }
+
+        .float-animation { 
+            animation: float 4s ease-in-out infinite; 
+            will-change: transform;
+        }
+
+        @keyframes float { 
+            0% { transform: translateY(0px) translateZ(0); } 
+            50% { transform: translateY(-15px) translateZ(0); } 
+            100% { transform: translateY(0px) translateZ(0); } 
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <div class="bg-red-neon text-white text-center py-3 font-black text-xs md:text-sm px-4 uppercase tracking-[0.3em] gpu-fix">
+        🍕 TECNOLOGIA VISUAL 2026: O FIM DA PIZZA COM CARA DE PAPELÃO
+    </div>
+
+    <header class="relative pt-24 pb-40 px-4 bg-pizza-dark text-white overflow-hidden gpu-fix">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-red-600 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-orange-700 rounded-full blur-[150px]"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="mb-10 max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(239,68,68,0.3)] gpu-fix">
+                <img src="./img/banner-pizza.jpg" alt="Pizza Elite Pro - Mastershot" class="w-full h-auto">
+            </div>
+
+            <h1 class="font-impact text-5xl md:text-8xl mb-8 leading-tight tracking-tighter uppercase gpu-fix">
+                SUA PIZZA COM O <br> <span class="text-red-neon italic">BRILHO DA ITÁLIA</span> <br> E O DESEJO DO CINEMA.
+            </h1>
+            <p class="text-xl md:text-2xl text-red-100 mb-12 max-w-4xl mx-auto leading-relaxed px-4 gpu-fix">
+                Pare de postar fotos opacas. Domine a <b>Engenharia do Queijo Infinito</b> e da massa perfeita. Transforme o seu cardápio em um imã de pedidos.
+            </p>
+            <a href="https://pay.kiwify.com.br/F5mTL60" class="bg-red-neon hover:bg-red-500 hover:scale-105 transition-all text-white font-black text-2xl md:text-3xl py-8 px-16 rounded-full shadow-[0_0_60px_rgba(239,68,68,0.5)] uppercase inline-block gpu-fix">
+                Dominar a Pizzaria Agora ➔
+            </a>
+        </div>
+    </header>
+
+    <section class="py-24 px-4 bg-red-50 gpu-fix">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="font-impact text-3xl md:text-5xl mb-8 text-slate-900 leading-tight uppercase">FOTO DE CELULAR <br><span class="text-red-600">MATA O SEU LUCRO.</span></h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">Uma pizza fria e sem brilho no aplicativo é o caminho mais rápido para o seu cliente escolher o concorrente. Você precisa mostrar o vapor, o azeite escorrendo e a borda crocante.</p>
+                <div class="bg-white p-6 border-r-8 border-red-neon rounded-l-xl shadow-lg">
+                    <p class="text-slate-800 font-bold italic text-lg">"No mundo das pizzas, o clique acontece quando o cérebro do cliente sente o sabor através da luz e da textura."</p>
+                    <p class="mt-2 text-red-neon font-black">— @mestredoprompt-ia</p>
+                </div>
+            </div>
+            <img src="./img/unboxing-pizza.jpg" alt="Abertura de Caixa Pizza Elite" class="rounded-[40px] shadow-2xl gpu-fix">
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-white gpu-fix">
+        <div class="max-w-6xl mx-auto text-center mb-20">
+            <h2 class="font-impact text-4xl md:text-7xl mb-6 uppercase tracking-tighter">O ARSENAL DA <span class="text-red-neon">PIZZA REAL</span></h2>
+            <div class="w-32 h-2 bg-red-neon mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-pizza-dark p-10 rounded-[40px] text-white border-b-8 border-red-600 shadow-2xl gpu-fix">
+                <div class="text-5xl mb-6">🍕</div>
+                <h3 class="text-2xl font-black mb-4 uppercase">200+ Prompts de Pizza</h3>
+                <p class="text-red-100 text-sm leading-relaxed mb-6">Napolitana, Romana, Pan e Brasileira. Foco total em bordas recheadas e ingredientes frescos.</p>
+                <span class="bg-red-600/20 text-red-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-red-600/30">Incluso</span>
+            </div>
+
+            <div class="bg-pizza-dark p-10 rounded-[40px] text-white border-b-8 border-orange-500 shadow-2xl gpu-fix">
+                <div class="text-5xl mb-6">🎬</div>
+                <h3 class="text-2xl font-black mb-4 uppercase text-orange-500">Motion Pro: Cheese Pull</h3>
+                <p class="text-red-100 text-sm leading-relaxed mb-6">Prompts para vídeos da fatia subindo e o queijo esticando ao infinito. O gatilho supremo do Instagram.</p>
+                <span class="bg-orange-500/20 text-orange-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-orange-500/30">Incluso</span>
+            </div>
+
+            <div class="bg-pizza-dark p-10 rounded-[40px] text-white border-b-8 border-yellow-600 shadow-2xl gpu-fix">
+                <div class="text-5xl mb-6">🥖</div>
+                <h3 class="text-2xl font-black mb-4 uppercase text-yellow-600">Entradas & Calzones</h3>
+                <p class="text-red-100 text-sm leading-relaxed mb-6">Pães de alho gourmet, crostinis e calzones dourados. Aumente o valor de cada pedido.</p>
+                <span class="bg-yellow-600/20 text-yellow-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-yellow-600/30">Incluso</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-red-50 gpu-fix">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-impact text-4xl md:text-6xl text-center mb-20 uppercase tracking-tighter text-slate-900">BÔNUS <span class="text-red-neon underline italic">DE MESTRE</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 md:order-1 float-animation gpu-fix">
+                    <img src="./img/combo-pizza.jpg" alt="Combo Pizza de Elite" class="rounded-[40px] shadow-2xl">
+                </div>
+                <div class="order-1 md:order-2 space-y-8 gpu-fix">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-red-neon gpu-fix">
+                        <div class="font-black text-red-neon mb-4">BÔNUS 01</div>
+                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">GUIA DE UPSCALE 8K</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Prepare suas pizzas para banners gigantes de fachada com nitidez de laboratório.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-red-neon gpu-fix">
+                        <div class="font-black text-red-neon mb-4">BÔNUS 02</div>
+                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">REMARKETING NOTURNO</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Como dominar o feed às 21h, quando o seu cliente está faminto e pronto para o clique.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-red-neon gpu-fix">
+                        <div class="font-black text-red-neon mb-4">BÔNUS 03</div>
+                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">PACK DRINKS DE LUXO</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Venda o combo completo com imagens de sodas e sucos que transbordam frescor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-white gpu-fix">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="font-impact text-3xl md:text-5xl uppercase italic mb-4 text-slate-900">O PODER DO <span class="text-red-neon">REALISMO SUPREMO</span></h2>
+            <p class="text-slate-500 font-bold tracking-widest uppercase text-sm">Pizzas 100% Geradas por I.A. de Alta Definição</p>
+        </div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+            <img src="./img/pizza-napolitana.jpg" alt="Napolitana Realista" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+            <img src="./img/calabresa-premium.jpg" alt="Calabresa com Brilho" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+            <img src="./img/bordas-recheadas.jpg" alt="Foco na Borda" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+            <img src="./img/fatia-levitacao.jpg" alt="Fatia em Movimento" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+        </div>
+    </section>
+
+    <section id="oferta" class="py-24 px-4 bg-pizza-dark text-white text-center gpu-fix">
+        <div class="max-w-4xl mx-auto border-[10px] border-red-600/20 p-12 md:p-24 rounded-[60px] bg-black shadow-[0_0_100px_rgba(239,68,68,0.2)] gpu-fix">
+            
+            <h2 class="font-impact text-4xl md:text-8xl mb-6 uppercase tracking-tighter italic gpu-fix">REINE NO <br> <span class="text-red-neon">IFOOD</span></h2>
+            <p class="text-red-300 font-bold mb-12 tracking-widest uppercase">Arsenal 200 Prompts • Masterclass • Bônus VIP</p>
+
+            <div class="mb-16">
+                <span class="text-slate-600 line-through text-3xl font-bold">De R$ 297,00</span>
+                <div class="text-8xl md:text-9xl font-black text-white mt-4 leading-none">R$ 147,<span class="text-4xl text-red-neon font-black">00</span></div>
+                <p class="mt-8 text-xl text-red-200">Ou leve o <strong>Combo Império</strong> (Os 4 Packs) por apenas <strong>R$ 397</strong></p>
+            </div>
+
+            <a href="https://pay.kiwify.com.br/F5mTL60" class="block w-full bg-red-neon hover:bg-red-500 hover:scale-105 transition-all text-white font-black text-2xl md:text-5xl py-10 rounded-full shadow-2xl uppercase tracking-tighter gpu-fix">
+                QUERO O MEU ARSENAL AGORA!
+            </a>
+
+            <div class="mt-12 flex flex-wrap justify-center gap-10 text-slate-500 font-black text-xs uppercase tracking-widest">
+                <span>🛡️ Garantia Total de 7 Dias</span>
+                <span>🚀 Acesso Imediato</span>
+                <span>💳 12x no Cartão ou Pix</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center text-slate-700 bg-black gpu-fix">
+        <p class="font-bold mb-4 uppercase tracking-widest opacity-50">Mestre do Prompt I.A. &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

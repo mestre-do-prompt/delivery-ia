@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Elite Pro | O Arsenal de Cinema</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-impact { font-family: 'Montserrat', sans-serif; }
+        .bg-burger-dark { background-color: #0a0a0a; }
+        .text-orange-neon { color: #fb923c; }
+        .bg-orange-neon { background-color: #fb923c; }
+        html { scroll-behavior: smooth; }
+
+        /* TRAVAS DE SEGURANÇA CONTRA BUG DE RENDERIZAÇÃO */
+        .gpu-fix {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+            will-change: transform;
+        }
+
+        .float-animation { 
+            animation: float 4s ease-in-out infinite; 
+            will-change: transform;
+        }
+
+        @keyframes float { 
+            0% { transform: translateY(0px) translateZ(0); } 
+            50% { transform: translateY(-15px) translateZ(0); } 
+            100% { transform: translateY(0px) translateZ(0); } 
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <div class="bg-orange-neon text-black text-center py-3 font-black text-xs md:text-sm px-4 uppercase tracking-[0.3em] gpu-fix">
+        🔥 TECNOLOGIA VISUAL 2026: TRANSFORME "SCROLL" EM VENDA IMEDIATA
+    </div>
+
+    <header class="relative pt-24 pb-40 px-4 bg-burger-dark text-white overflow-hidden gpu-fix">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-orange-600 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-yellow-600 rounded-full blur-[150px]"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="mb-10 max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(251,146,60,0.3)] gpu-fix">
+                <img src="./img/banner-burger.jpg" alt="Burger Elite Pro - Mastershot" class="w-full h-auto">
+            </div>
+
+            <h1 class="font-impact text-5xl md:text-8xl mb-8 leading-tight tracking-tighter uppercase gpu-fix">
+                O SEU HAMBÚRGUER COM <br> <span class="text-orange-neon italic">PODER DE CINEMA</span> <br> E SUCULÊNCIA REAL.
+            </h1>
+            <p class="text-xl md:text-2xl text-orange-100 mb-12 max-w-4xl mx-auto leading-relaxed px-4 gpu-fix">
+                Não poste apenas fotos. Gere <b>"Food Porn"</b> hipnótico. Domine o visual que faz o cliente sentir o cheiro da carne na brasa através da tela.
+            </p>
+            <a href="https://pay.kiwify.com.br/DV99VcF" class="bg-orange-neon hover:bg-orange-400 hover:scale-105 transition-all text-black font-black text-2xl md:text-3xl py-8 px-16 rounded-full shadow-[0_0_60px_rgba(251,146,60,0.5)] uppercase inline-block gpu-fix">
+                Dominar o iFood Agora ➔
+            </a>
+        </div>
+    </header>
+
+    <section class="py-24 px-4 bg-orange-50 gpu-fix">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="font-impact text-3xl md:text-5xl mb-8 text-slate-900 leading-tight uppercase">VOCÊ TEM <span class="text-red-600">2 SEGUNDOS</span> <br>PARA NÃO PERDER A VENDA.</h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">No iFood, se a sua foto é escura e sem brilho, o cliente simplesmente passa reto. Grandes redes gastam fortunas com fotógrafos; você usará <b>Engenharia Visual IA</b>.</p>
+                <div class="bg-white p-6 border-r-8 border-orange-neon rounded-l-xl shadow-lg">
+                    <p class="text-slate-800 font-bold italic text-lg">"O Burger Elite Pro é a sua arma secreta. Imagens tão reais que é impossível não clicar."</p>
+                    <p class="mt-2 text-orange-neon font-black">— @mestredoprompt-ia</p>
+                </div>
+            </div>
+            <img src="./img/unboxing-burger.jpg" alt="Experiência Burger Elite" class="rounded-[40px] shadow-2xl gpu-fix">
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-white gpu-fix">
+        <div class="max-w-6xl mx-auto text-center mb-20">
+            <h2 class="font-impact text-4xl md:text-7xl mb-6 uppercase tracking-tighter">O QUE VOCÊ VAI <span class="text-orange-neon">RECEBER</span></h2>
+            <div class="w-32 h-2 bg-orange-neon mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-burger-dark p-10 rounded-[40px] text-white border-b-8 border-orange-600 shadow-2xl gpu-fix">
+                <div class="text-5xl mb-6">🍔</div>
+                <h3 class="text-2xl font-black mb-4 uppercase">150+ Prompts de Burger</h3>
+                <p class="text-orange-100 text-sm leading-relaxed mb-6">Do X-Tudo ao Wagyu Premium. Foco em Maillard, gordura brilhante e queijo derretido como lava.</p>
+                <span class="bg-orange-600/20 text-orange-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-orange-600/30">Incluso</span>
+            </div>
+
+            <div class="bg-burger-dark p-10 rounded-[40px] text-white border-b-8 border-yellow-500 shadow-2xl gpu-fix">
+                <div class="text-5xl mb-6">🎬</div>
+                <h3 class="text-2xl font-black mb-4 uppercase text-yellow-500">Pack Motion Pro</h3>
+                <p class="text-orange-100 text-sm leading-relaxed mb-6">Cenas em movimento: gema rompendo, queijo esticando e vapor saindo da brasa. Domine os Reels.</p>
+                <span class="bg-yellow-500/20 text-yellow-500 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-yellow-500/30">Incluso</span>
+            </div>
+
+            <div class="bg-burger-dark p-10 rounded-[40px] text-white border-b-8 border-red-600 shadow-2xl gpu-fix">
+                <div class="text-5xl mb-6">📸</div>
+                <h3 class="text-2xl font-black mb-4 uppercase text-red-600">Acompanhamentos Pro</h3>
+                <p class="text-orange-100 text-sm leading-relaxed mb-6">Batatas Crinkle, Onion Rings e Nuggets com texturas crocantes visíveis a quilômetros.</p>
+                <span class="bg-red-600/20 text-red-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-red-600/30">Incluso</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-orange-50 gpu-fix">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-impact text-4xl md:text-6xl text-center mb-20 uppercase tracking-tighter text-slate-900">BÔNUS <span class="text-orange-neon underline italic">ESTRATÉGICOS</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 md:order-1 float-animation gpu-fix">
+                    <img src="./img/combo-burger.jpg" alt="Combo Burger Elite" class="rounded-[40px] shadow-2xl">
+                </div>
+                <div class="order-1 md:order-2 space-y-8 gpu-fix">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon gpu-fix">
+                        <div class="font-black text-orange-neon mb-4">BÔNUS 01</div>
+                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">GUIA DE UPSCALE 8K</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Transforme suas gerações em arquivos gigantes prontos para fachadas e banners de LED.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon gpu-fix">
+                        <div class="font-black text-orange-neon mb-4">BÔNUS 02</div>
+                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">REMARKETING NOTURNO</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">A estratégia visual exata para vender burger na madrugada, quando a fome fala mais alto.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon gpu-fix">
+                        <div class="font-black text-orange-neon mb-4">BÔNUS 03</div>
+                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">BIBLIOTECA DE BEBIDAS</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">100+ prompts de sucos e refris trincando de gelados para aumentar seu ticket médio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-white gpu-fix">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="font-impact text-3xl md:text-5xl uppercase italic mb-4 text-slate-900">O PODER DO <span class="text-orange-neon">REALISMO SUPREMO</span></h2>
+            <p class="text-slate-500 font-bold tracking-widest uppercase text-sm">Visual "Food Porn" 100% Gerado por I.A.</p>
+        </div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+            <img src="./img/smash-burger.jpg" alt="Smash Burger Realista" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+            <img src="./img/bacon-glaze.jpg" alt="Bacon Caramelizado" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+            <img src="./img/chicken-burger.jpg" alt="Burger de Frango Crispy" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+            <img src="./img/cheese-pull.jpg" alt="Efeito Cheese Pull" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-auto object-cover aspect-square gpu-fix">
+        </div>
+    </section>
+
+    <section id="oferta" class="py-24 px-4 bg-burger-dark text-white text-center gpu-fix">
+        <div class="max-w-4xl mx-auto border-[10px] border-orange-600/20 p-12 md:p-24 rounded-[60px] bg-black shadow-[0_0_100px_rgba(251,146,60,0.2)] gpu-fix">
+            
+            <h2 class="font-impact text-4xl md:text-8xl mb-6 uppercase tracking-tighter italic gpu-fix">ASSUMA O <br> <span class="text-orange-neon">CONTROLE</span></h2>
+            <p class="text-orange-300 font-bold mb-12 tracking-widest uppercase">Arsenal 150 Prompts • Masterclass • Bônus VIP</p>
+
+            <div class="mb-16">
+                <span class="text-slate-600 line-through text-3xl font-bold">De R$ 297,00</span>
+                <div class="text-8xl md:text-9xl font-black text-white mt-4 leading-none">R$ 147,<span class="text-4xl text-orange-neon font-black">00</span></div>
+                <p class="mt-8 text-xl text-orange-200">Ou leve o <strong>Combo Império</strong> (Os 4 Packs) por apenas <strong>R$ 397</strong></p>
+            </div>
+
+            <a href="https://pay.kiwify.com.br/DV99VcF" class="block w-full bg-orange-neon hover:bg-orange-400 hover:scale-105 transition-all text-black font-black text-2xl md:text-5xl py-10 rounded-full shadow-2xl uppercase tracking-tighter gpu-fix">
+                QUERO O MEU ARSENAL AGORA!
+            </a>
+
+            <div class="mt-12 flex flex-wrap justify-center gap-10 text-slate-500 font-black text-xs uppercase tracking-widest">
+                <span>🛡️ Garantia de 7 Dias</span>
+                <span>🚀 Entrega Imediata</span>
+                <span>💳 12x no Cartão ou Pix</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center text-slate-700 bg-black gpu-fix">
+        <p class="font-bold mb-4 uppercase tracking-widest opacity-50">Mestre do Prompt I.A. &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

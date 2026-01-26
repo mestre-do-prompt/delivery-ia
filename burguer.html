@@ -68,9 +68,9 @@
             }
         }
         
-        /* Classe extra para garantir o clique no play */
-        .play-overlay {
-            pointer-events: none; /* Permite clicar através do ícone */
+        /* Classe extra para garantir que o clique passe pelo ícone e vá para a div pai */
+        .pointer-events-none {
+            pointer-events: none;
         }
     </style>
 </head>
@@ -94,7 +94,7 @@
                     
                     <img src="capa-video.webp" id="thumb-img" alt="Assistir Vídeo" class="w-full h-full object-cover opacity-90 transition duration-500 group-hover:opacity-100 group-hover:scale-105">
 
-                    <div id="play-btn" class="absolute inset-0 flex items-center justify-center play-overlay">
+                    <div id="play-btn" class="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div class="w-20 h-20 bg-orange-neon rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(251,146,60,0.6)] group-hover:scale-110 transition-transform duration-300">
                             <svg class="w-8 h-8 text-black fill-current ml-1" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z"/>
@@ -107,15 +107,15 @@
 
             <script>
                 function carregarVideo() {
-                    // ID DO SEU VIDEO AQUI (Substitua o V-R8g2gAuVM pelo código do seu vídeo)
+                    // ID do seu vídeo (V-R8g2gAuVM) já inserido aqui
                     var videoId = "V-R8g2gAuVM"; 
                     
                     var container = document.getElementById('video-wrapper');
                     
                     // Injeta o iframe substituindo tudo dentro do container
-                    container.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    container.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" title="Burger Elite Pro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                     
-                    // Remove o evento de clique para não recarregar
+                    // Remove o evento de clique para limpar o código
                     container.removeAttribute("onclick");
                 }
             </script>
@@ -229,4 +229,139 @@
                     <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon">
                         <div class="font-black text-orange-neon mb-4">BÔNUS 02</div>
                         <h4 class="font-black text-xl mb-2 uppercase text-slate-900">REMARKETING NOTURNO</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">A estratégia visual exata para vender burger na madrugada,
+                        <p class="text-slate-600 text-sm leading-relaxed">A estratégia visual exata para vender burger na madrugada, quando a fome fala mais alto.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon">
+                        <div class="font-black text-orange-neon mb-4">BÔNUS 03</div>
+                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">BIBLIOTECA DE BEBIDAS</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">100+ prompts de sucos e refris trincando de gelados para aumentar seu ticket médio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-white gpu-fix">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="font-impact text-3xl md:text-5xl uppercase italic mb-4 text-slate-900">O PODER DO <span class="text-orange-neon">REALISMO SUPREMO</span></h2>
+            <p class="text-slate-500 font-bold tracking-widest uppercase text-sm">Visual "Food Porn" 100% Gerado por I.A.</p>
+        </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+            <img src="./img/smash-burger.webp" alt="Smash Burger" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
+            <img src="./img/bacon-glaze.webp" alt="Bacon" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
+            <img src="./img/chicken-burger.webp" alt="Chicken" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
+            <img src="./img/cheese-pull.webp" alt="Cheese" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-slate-50 gpu-fix">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-impact text-4xl md:text-6xl text-center mb-16 uppercase tracking-tighter">DÚVIDAS <span class="text-orange-neon">FREQUENTES</span></h2>
+            <div class="grid grid-cols-1 gap-6 mb-20">
+                <div class="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100">
+                    <h4 class="font-black text-slate-900 uppercase text-lg mb-2">Preciso ter experiência com Inteligência Artificial?</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">Nenhuma! O Arsenal é um sistema de "copiar e colar". Eu te entrego os comandos prontos.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100">
+                    <h4 class="font-black text-slate-900 uppercase text-lg mb-2">Consigo usar pelo meu celular?</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">Sim! Todo o processo de geração das imagens pode ser feito diretamente pelo seu smartphone.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100">
+                    <h4 class="font-black text-slate-900 uppercase text-lg mb-2">O acesso é vitalício?</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">Sim! Você paga uma única vez e terá acesso vitalício e atualizações futuras.</p>
+                </div>
+            </div>
+
+            <div class="bg-burger-dark p-10 md:p-16 rounded-[50px] text-white relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-orange-600/10 rounded-full blur-[80px]"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-10">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 md:w-40 md:h-40 border-4 border-orange-neon rounded-full flex flex-col items-center justify-center text-center p-2 leading-none">
+                            <span class="font-impact text-3xl md:text-4xl text-orange-neon italic">7 DIAS</span>
+                            <span class="text-[10px] md:text-xs uppercase not-italic font-black text-white tracking-[0.2em] mt-1">GARANTIA</span>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="font-impact text-3xl md:text-4xl uppercase mb-4 italic leading-tight">SUA SATISFAÇÃO OU <br><span class="text-orange-neon">SEU DINHEIRO DE VOLTA</span></h3>
+                        <p class="text-orange-100/70 text-base md:text-lg leading-relaxed">Eu confio tanto no Arsenal que te dou uma garantia incondicional. Se em 7 dias não gostar, devolvo cada centavo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" class="py-24 px-4 bg-burger-dark text-white text-center gpu-fix">
+        <div class="max-w-4xl mx-auto border-[10px] border-orange-600/20 p-8 md:p-24 rounded-[60px] bg-black shadow-[0_0_100px_rgba(251,146,60,0.2)]">
+            
+            <div class="mb-8 inline-block bg-red-600/20 border border-red-600 px-6 py-2 rounded-full">
+                <p class="text-red-500 font-black text-sm uppercase tracking-widest">
+                    ⚠️ Oferta expira em: <span id="timer">09:57</span>
+                </p>
+            </div>
+
+            <h2 class="font-impact text-4xl md:text-8xl mb-6 uppercase tracking-tighter italic">ASSUMA O <br> <span class="text-orange-neon">CONTROLE</span></h2>
+            <p class="text-orange-300 font-bold mb-12 tracking-widest uppercase text-xs md:text-sm">Arsenal 150 Prompts • Masterclass • Bônus VIP</p>
+
+            <div class="mb-16">
+                <span class="text-slate-600 line-through text-2xl md:text-3xl font-bold">De R$ 297,00</span>
+                <div class="text-7xl md:text-9xl font-black text-white mt-4 leading-none">R$ 147,<span class="text-3xl md:text-4xl text-orange-neon font-black">00</span></div>
+                
+                <p class="mt-8 text-xl text-orange-200">
+                    <a href="https://kiwify.app/KEzK2gq" class="hover:text-white hover:underline transition-all duration-300">
+                        Ou leve o <strong>Combo Império</strong> (Os 4 Packs) por apenas <strong>R$ 397</strong>
+                    </a>
+                </p>
+            </div>
+
+            <a href="https://pay.kiwify.com.br/DV99VcF" class="block w-full bg-orange-neon hover:bg-orange-400 hover:scale-105 transition-all text-black font-black text-2xl md:text-5xl py-8 md:py-10 rounded-full shadow-2xl uppercase tracking-tighter">
+                QUERO O MEU ARSENAL AGORA!
+            </a>
+
+            <div class="mt-8 flex justify-center items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all">
+                <img src="https://logodownload.org/wp-content/uploads/2020/02/pix-bc-logo.png" alt="Pix" class="h-4 md:h-5">
+                <img src="https://logodownload.org/wp-content/uploads/2014/07/visa-logo-1.png" alt="Visa" class="h-4 md:h-5">
+                <img src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-7.png" alt="Mastercard" class="h-4 md:h-5">
+                <div class="h-5 w-px bg-slate-700"></div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter italic">Compra 100% Segura</span>
+            </div>
+
+            <div class="mt-12 flex flex-wrap justify-center gap-6 md:gap-10 text-slate-500 font-black text-[10px] md:text-xs uppercase tracking-widest">
+                <span>🛡️ Garantia de 7 Dias</span>
+                <span>🚀 Entrega Imediata</span>
+                <span>💳 12x no Cartão ou Pix</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center text-slate-700 bg-black">
+        <p class="font-bold mb-4 uppercase tracking-widest opacity-50 text-xs">Mestre do Prompt I.A. &copy; 2026</p>
+    </footer>
+
+    <div class="mobile-cta">
+        <a href="https://pay.kiwify.com.br/DV99VcF" class="block bg-orange-neon text-black font-black text-center py-4 rounded-full uppercase tracking-tighter text-sm">
+            🔥 QUERO MEU ARSENAL AGORA!
+        </a>
+    </div>
+
+    <script>
+        // Lógica do Timer
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { timer = duration; }
+            }, 1000);
+        }
+        window.onload = function () {
+            var tenMinutes = 60 * 10,
+            display = document.querySelector('#timer');
+            startTimer(tenMinutes, display);
+        };
+    </script>
+
+</body>
+</html>

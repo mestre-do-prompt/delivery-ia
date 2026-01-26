@@ -82,19 +82,34 @@
         </div>
         
         <div class="max-w-6xl mx-auto text-center relative z-10">
+            
             <div class="mb-10 max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(251,146,60,0.3)] bg-black gpu-fix">
-                <div class="aspect-video w-full">
-                    <iframe 
-                        class="w-full h-full" 
-                        src="https://www.youtube.com/embed/V-R8g2gAuVM?autoplay=1&mute=1&rel=0&modestbranding=1" 
-                        title="Burger Elite Pro - Vídeo de Vendas" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="aspect-video w-full relative cursor-pointer group" onclick="playVideo()">
+                    
+                    <img src="capa-video.webp" id="thumb-img" alt="Assistir Arsenal Burger Elite" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+
+                    <div id="play-btn" class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-orange-neon rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(251,146,60,0.6)] group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-black fill-current ml-1" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div id="video-target" class="w-full h-full"></div>
                 </div>
             </div>
 
+            <script>
+                function playVideo() {
+                    // Carrega o iframe somente após o clique
+                    var iframeHtml = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/V-R8g2gAuVM?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    
+                    document.getElementById('thumb-img').style.display = 'none';
+                    document.getElementById('play-btn').style.display = 'none';
+                    document.getElementById('video-target').innerHTML = iframeHtml;
+                }
+            </script>
             <h1 class="font-impact text-5xl md:text-8xl mb-8 leading-tight tracking-tighter uppercase gpu-fix">
                 O SEU HAMBÚRGUER COM <br> <span class="text-orange-neon italic">PODER DE CINEMA</span> <br> E SUCULÊNCIA REAL.
             </h1>

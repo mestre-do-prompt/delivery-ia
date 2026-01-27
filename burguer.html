@@ -22,345 +22,203 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Outfit', sans-serif; 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+        body { font-family: 'Outfit', sans-serif; -webkit-font-smoothing: antialiased; }
         .font-impact { font-family: 'Montserrat', sans-serif; }
         .bg-burger-dark { background-color: #0a0a0a; }
         .text-orange-neon { color: #fb923c; }
         .bg-orange-neon { background-color: #fb923c; }
         html { scroll-behavior: smooth; }
-
-        .gpu-fix {
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-            will-change: transform;
-        }
-
-        .float-animation { 
-            animation: float 4s ease-in-out infinite; 
-            will-change: transform;
-        }
-
-        @keyframes float { 
-            0% { transform: translateY(0px) translateZ(0); } 
-            50% { transform: translateY(-15px) translateZ(0); } 
-            100% { transform: translateY(0px) translateZ(0); } 
-        }
-
-        /* Estilo para o botão flutuante mobile */
-        .mobile-cta {
-            display: none;
-        }
-        @media (max-width: 768px) {
-            .mobile-cta {
-                display: block;
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90%;
-                z-index: 100;
-                filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-            }
-        }
-        
-        /* Classe extra para garantir que o clique passe pelo ícone e vá para a div pai */
-        .pointer-events-none {
-            pointer-events: none;
-        }
+        .gpu-fix { transform: translateZ(0); backface-visibility: hidden; }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        .mobile-cta { display: none; }
+        @media (max-width: 768px) { .mobile-cta { display: block; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; z-index: 100; } }
     </style>
 </head>
 <body class="bg-white text-slate-900 overflow-x-hidden pb-24 md:pb-0">
 
-    <div class="bg-orange-neon text-black text-center py-3 font-black text-xs md:text-sm px-4 uppercase tracking-[0.3em] gpu-fix">
+    <div class="bg-orange-neon text-black text-center py-3 font-black text-xs md:text-sm px-4 uppercase tracking-[0.3em]">
         🔥 TECNOLOGIA VISUAL 2026: TRANSFORME "SCROLL" EM VENDA IMEDIATA
     </div>
 
-    <header class="relative pt-24 pb-32 px-4 bg-burger-dark text-white overflow-hidden gpu-fix">
+    <header class="relative pt-24 pb-32 px-4 bg-burger-dark text-white overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
             <div class="absolute top-10 left-10 w-64 h-64 bg-orange-600 rounded-full blur-[120px]"></div>
             <div class="absolute bottom-10 right-10 w-96 h-96 bg-yellow-600 rounded-full blur-[150px]"></div>
         </div>
         
         <div class="max-w-6xl mx-auto text-center relative z-10">
-            
-            <div class="mb-10 max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(251,146,60,0.3)] bg-black gpu-fix">
-                
+            <div class="mb-10 max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(251,146,60,0.3)] bg-black">
                 <div id="video-wrapper" class="aspect-video w-full relative cursor-pointer group bg-black" onclick="carregarVideo()">
-                    
-                    <img src="capa-video.webp" id="thumb-img" alt="Assistir Vídeo" class="w-full h-full object-cover opacity-90 transition duration-500 group-hover:opacity-100 group-hover:scale-105">
-
-                    <div id="play-btn" class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div class="w-20 h-20 bg-orange-neon rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(251,146,60,0.6)] group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-8 h-8 text-black fill-current ml-1" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
+                    <img src="capa-video.webp" alt="Play" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-orange-neon rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition">
+                            <svg class="w-8 h-8 text-black fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            <script>
-                function carregarVideo() {
-                    // ID do seu vídeo (V-R8g2gAuVM) já inserido aqui
-                    var videoId = "V-R8g2gAuVM"; 
-                    
-                    var container = document.getElementById('video-wrapper');
-                    
-                    // Injeta o iframe substituindo tudo dentro do container
-                    container.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" title="Burger Elite Pro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-                    
-                    // Remove o evento de clique para limpar o código
-                    container.removeAttribute("onclick");
-                }
-            </script>
-            <h1 class="font-impact text-5xl md:text-8xl mb-8 leading-tight tracking-tighter uppercase gpu-fix">
-                O SEU HAMBÚRGUER COM <br> <span class="text-orange-neon italic">PODER DE CINEMA</span> <br> E SUCULÊNCIA REAL.
+            <h1 class="font-impact text-5xl md:text-8xl mb-8 leading-tight tracking-tighter uppercase">
+                O SEU HAMBÚRGUER COM <br> <span class="text-orange-neon italic">PODER DE CINEMA</span>
             </h1>
-            <p class="text-xl md:text-2xl text-orange-100 mb-12 max-w-4xl mx-auto leading-relaxed px-4 gpu-fix">
-                Não poste apenas fotos. Gere <b>"Food Porn"</b> hipnótico. Domine o visual que faz o cliente sentir o cheiro da carne na brasa através da tela.
+            <p class="text-xl md:text-2xl text-orange-100 mb-12 max-w-4xl mx-auto">
+                Não poste apenas fotos. Gere <b>"Food Porn"</b> hipnótico que obriga o cliente a clicar no seu cardápio.
             </p>
-            <a href="https://pay.kiwify.com.br/DV99VcF" class="bg-orange-neon hover:bg-orange-400 hover:scale-105 transition-all text-black font-black text-2xl md:text-3xl py-8 px-16 rounded-full shadow-[0_0_60px_rgba(251,146,60,0.5)] uppercase inline-block gpu-fix">
+            <a href="https://pay.kiwify.com.br/DV99VcF" class="bg-orange-neon hover:scale-105 transition-all text-black font-black text-2xl md:text-3xl py-8 px-16 rounded-full shadow-2xl uppercase inline-block">
                 Dominar o iFood Agora ➔
             </a>
         </div>
     </header>
 
-    <section class="py-24 px-4 bg-white gpu-fix">
+    <section class="py-20 bg-slate-50 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-8 rounded-[40px] shadow-lg border-2 border-red-100">
+                    <span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-xs font-black uppercase">O Jeito Errado</span>
+                    <h3 class="text-2xl font-black mt-4 mb-4 uppercase">Foto Amadora</h3>
+                    <ul class="space-y-3 text-slate-500">
+                        <li>❌ Luz da cozinha (amarela/escura)</li>
+                        <li>❌ Pão murcho e sem brilho</li>
+                        <li>❌ Angulo que não valoriza o lanche</li>
+                        <li>❌ <b>Resultado:</b> Cliente passa reto.</li>
+                    </ul>
+                </div>
+                <div class="bg-burger-dark p-8 rounded-[40px] shadow-2xl border-2 border-orange-neon text-white">
+                    <span class="bg-orange-neon text-black px-4 py-1 rounded-full text-xs font-black uppercase">Jeito Elite Pro</span>
+                    <h3 class="text-2xl font-black mt-4 mb-4 uppercase text-orange-neon">Engenharia Visual IA</h3>
+                    <ul class="space-y-3 text-orange-100">
+                        <li>✅ Iluminação de estúdio profissional</li>
+                        <li>✅ Texturas reais (Queijo derretendo)</li>
+                        <li>✅ "Food Porn" que gera salivação imediata</li>
+                        <li>✅ <b>Resultado:</b> Explosão de cliques.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-white overflow-hidden">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-impact text-4xl md:text-6xl text-center mb-16 uppercase tracking-tighter">QUEM JÁ ESTÁ <span class="text-orange-neon italic">VENDENDO MAIS</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-[40px] border border-slate-100 shadow-xl relative">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center font-black text-orange-700 text-sm">JS</div>
-                        <div>
-                            <p class="font-black text-slate-900 text-sm uppercase">João Silva</p>
-                            <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">@silva_burguer</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-600 italic leading-relaxed text-sm">"Mano, o negócio é absurdo. Eu tirava foto com o celular na luz da cozinha e o iFood tava morto. Com os prompts do Mestre, a galera pergunta se contratei fotógrafo de agência. Os pedidos subiram real!"</p>
-                    <div class="mt-6 flex text-orange-400 text-xs">⭐⭐⭐⭐⭐</div>
-                </div>
-                <div class="bg-burger-dark p-8 rounded-[40px] text-white shadow-2xl relative border-b-8 border-orange-neon">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center font-black text-white text-sm">MC</div>
-                        <div>
-                            <p class="font-black text-white text-sm uppercase">Mariana Costa</p>
-                            <p class="text-xs text-orange-200 uppercase font-bold tracking-widest">@chef_maricosta</p>
-                        </div>
-                    </div>
-                    <p class="text-orange-100 italic leading-relaxed text-sm">"O Pack Motion Pro mudou o jogo dos meus Reels. É impossível não sentir fome vendo aquele queijo derretendo com o vapor saindo. O custo-benefício é surreal, paguei o investimento no primeiro dia."</p>
-                    <div class="mt-6 flex text-orange-neon text-xs">⭐⭐⭐⭐⭐</div>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-[40px] border border-slate-100 shadow-xl relative">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-slate-300 rounded-full flex items-center justify-center font-black text-slate-700 text-sm">RL</div>
-                        <div>
-                            <p class="font-black text-slate-900 text-sm uppercase">Ricardo Lemos</p>
-                            <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Lemos Delivery</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-600 italic leading-relaxed text-sm">"Eu tava desconfiado, mas o manual de Upscale 8k é o que ninguém entrega. Imprimi um banner gigante pro meu balcão com uma foto gerada e ficou perfeito. A nitidez é de outro mundo!"</p>
-                    <div class="mt-6 flex text-orange-400 text-xs">⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-4 bg-orange-50 gpu-fix">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="font-impact text-3xl md:text-5xl mb-8 text-slate-900 leading-tight uppercase">VOCÊ TEM <span class="text-red-600">2 SEGUNDOS</span> <br>PARA NÃO PERDER A VENDA.</h2>
-                <p class="text-lg text-slate-600 mb-6 leading-relaxed">No iFood, se a sua foto é escura e sem brilho, o cliente simplesmente passa reto. Grandes redes gastam fortunas com fotógrafos; você usará <b>Engenharia Visual IA</b>.</p>
-                <div class="bg-white p-6 border-r-8 border-orange-neon rounded-l-xl shadow-lg">
-                    <p class="text-slate-800 font-bold italic text-lg">"O Burger Elite Pro é a sua arma secreta. Imagens tão reais que é impossível não clicar."</p>
-                    <p class="mt-2 text-orange-neon font-black">— @mestredoprompt-ia</p>
-                </div>
-            </div>
-            <img src="./img/unboxing-burger.webp" alt="Experiência Burger Elite" class="rounded-[40px] shadow-2xl gpu-fix">
-        </div>
-    </section>
-
-    <section class="py-24 px-4 bg-white gpu-fix">
-        <div class="max-w-6xl mx-auto text-center mb-20">
-            <h2 class="font-impact text-4xl md:text-7xl mb-6 uppercase tracking-tighter">O QUE VOCÊ VAI <span class="text-orange-neon">RECEBER</span></h2>
-            <div class="w-32 h-2 bg-orange-neon mx-auto"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="bg-burger-dark p-10 rounded-[40px] text-white border-b-8 border-orange-600 shadow-2xl">
-                <div class="text-5xl mb-6">🍔</div>
-                <h3 class="text-2xl font-black mb-4 uppercase">150+ Prompts de Burger</h3>
-                <p class="text-orange-100 text-sm leading-relaxed mb-6">Do X-Tudo ao Wagyu Premium. Foco em Maillard, gordura brilhante e queijo derretido como lava.</p>
-                <span class="bg-orange-600/20 text-orange-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-orange-600/30">Incluso</span>
-            </div>
-            <div class="bg-burger-dark p-10 rounded-[40px] text-white border-b-8 border-yellow-500 shadow-2xl">
-                <div class="text-5xl mb-6">🎬</div>
-                <h3 class="text-2xl font-black mb-4 uppercase text-yellow-500">Pack Motion Pro</h3>
-                <p class="text-orange-100 text-sm leading-relaxed mb-6">Cenas em movimento: gema rompendo, queijo esticando e vapor saindo da brasa. Domine os Reels.</p>
-                <span class="bg-yellow-500/20 text-yellow-500 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-yellow-500/30">Incluso</span>
-            </div>
-            <div class="bg-burger-dark p-10 rounded-[40px] text-white border-b-8 border-red-600 shadow-2xl">
-                <div class="text-5xl mb-6">📸</div>
-                <h3 class="text-2xl font-black mb-4 uppercase text-red-600">Acompanhamentos Pro</h3>
-                <p class="text-orange-100 text-sm leading-relaxed mb-6">Batatas Crinkle, Onion Rings e Nuggets com texturas crocantes visíveis a quilômetros.</p>
-                <span class="bg-red-600/20 text-red-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-red-600/30">Incluso</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-4 bg-orange-50 gpu-fix">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-impact text-4xl md:text-6xl text-center mb-20 uppercase tracking-tighter text-slate-900">BÔNUS <span class="text-orange-neon underline italic">ESTRATÉGICOS</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                <div class="order-2 md:order-1 float-animation">
-                    <img src="./img/combo-burger.webp" alt="Combo Burger Elite" class="rounded-[40px] shadow-2xl">
-                </div>
-                <div class="order-1 md:order-2 space-y-8">
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon">
-                        <div class="font-black text-orange-neon mb-4">BÔNUS 01</div>
-                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">GUIA DE UPSCALE 8K</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">Transforme suas gerações em arquivos gigantes prontos para fachadas e banners de LED.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon">
-                        <div class="font-black text-orange-neon mb-4">BÔNUS 02</div>
-                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">REMARKETING NOTURNO</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">A estratégia visual exata para vender burger na madrugada, quando a fome fala mais alto.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-orange-neon">
-                        <div class="font-black text-orange-neon mb-4">BÔNUS 03</div>
-                        <h4 class="font-black text-xl mb-2 uppercase text-slate-900">BIBLIOTECA DE BEBIDAS</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">100+ prompts de sucos e refris trincando de gelados para aumentar seu ticket médio.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-4 bg-white gpu-fix">
-        <div class="max-w-6xl mx-auto text-center mb-12">
-            <h2 class="font-impact text-3xl md:text-5xl uppercase italic mb-4 text-slate-900">O PODER DO <span class="text-orange-neon">REALISMO SUPREMO</span></h2>
-            <p class="text-slate-500 font-bold tracking-widest uppercase text-sm">Visual "Food Porn" 100% Gerado por I.A.</p>
-        </div>
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-            <img src="./img/smash-burger.webp" alt="Smash Burger" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
-            <img src="./img/bacon-glaze.webp" alt="Bacon" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
-            <img src="./img/chicken-burger.webp" alt="Chicken" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
-            <img src="./img/cheese-pull.webp" alt="Cheese" class="rounded-[30px] shadow-2xl hover:scale-105 transition-transform duration-500 w-full aspect-square object-cover">
-        </div>
-    </section>
-
-    <section class="py-24 px-4 bg-slate-50 gpu-fix">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="font-impact text-4xl md:text-6xl text-center mb-16 uppercase tracking-tighter">DÚVIDAS <span class="text-orange-neon">FREQUENTES</span></h2>
-            <div class="grid grid-cols-1 gap-6 mb-20">
-                <div class="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100">
-                    <h4 class="font-black text-slate-900 uppercase text-lg mb-2">Preciso ter experiência com Inteligência Artificial?</h4>
-                    <p class="text-slate-600 leading-relaxed text-sm">Nenhuma! O Arsenal é um sistema de "copiar e colar". Eu te entrego os comandos prontos.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100">
-                    <h4 class="font-black text-slate-900 uppercase text-lg mb-2">Consigo usar pelo meu celular?</h4>
-                    <p class="text-slate-600 leading-relaxed text-sm">Sim! Todo o processo de geração das imagens pode ser feito diretamente pelo seu smartphone.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100">
-                    <h4 class="font-black text-slate-900 uppercase text-lg mb-2">O acesso é vitalício?</h4>
-                    <p class="text-slate-600 leading-relaxed text-sm">Sim! Você paga uma única vez e terá acesso vitalício e atualizações futuras.</p>
-                </div>
+            <div class="text-center mb-16">
+                <span class="text-orange-neon font-black tracking-[0.3em] uppercase text-sm italic">BÔNUS EXCLUSIVO E INÉDITO</span>
+                <h2 class="font-impact text-4xl md:text-7xl mt-4 leading-none uppercase">PSICOLOGIA DO <br> <span class="text-orange-neon">CARDÁPIO IFOOD</span></h2>
+                <p class="mt-6 text-slate-500 max-w-2xl mx-auto text-lg">Não basta ter a foto perfeita, você precisa saber onde colocá-la. Vou te entregar a estratégia científica por trás dos maiores faturamentos do app.</p>
             </div>
 
-            <div class="bg-burger-dark p-10 md:p-16 rounded-[50px] text-white relative overflow-hidden shadow-2xl">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-orange-600/10 rounded-full blur-[80px]"></div>
-                <div class="relative z-10 flex flex-col md:flex-row items-center gap-10">
-                    <div class="flex-shrink-0">
-                        <div class="w-32 h-32 md:w-40 md:h-40 border-4 border-orange-neon rounded-full flex flex-col items-center justify-center text-center p-2 leading-none">
-                            <span class="font-impact text-3xl md:text-4xl text-orange-neon italic">7 DIAS</span>
-                            <span class="text-[10px] md:text-xs uppercase not-italic font-black text-white tracking-[0.2em] mt-1">GARANTIA</span>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm">
+                        <div class="text-4xl mb-6">👁️</div>
+                        <h4 class="font-black text-xl mb-4 uppercase italic">01. O Mapa de Calor do Olhar</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Você vai aprender o "Padrão em F". Onde o cliente olha nos primeiros 2 segundos e qual lanche (com foto IA) deve estar exatamente ali para garantir a venda.</p>
                     </div>
-                    <div class="text-center md:text-left">
-                        <h3 class="font-impact text-3xl md:text-4xl uppercase mb-4 italic leading-tight">SUA SATISFAÇÃO OU <br><span class="text-orange-neon">SEU DINHEIRO DE VOLTA</span></h3>
-                        <p class="text-orange-100/70 text-base md:text-lg leading-relaxed">Eu confio tanto no Arsenal que te dou uma garantia incondicional. Se em 7 dias não gostar, devolvo cada centavo.</p>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm">
+                        <div class="text-4xl mb-6">⚓</div>
+                        <h4 class="font-black text-xl mb-4 uppercase italic">02. Ancoragem de Valor Supremo</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Como usar uma imagem ultra-premium de um lanche caro para fazer o seu combo principal parecer "barato", mesmo que você aumente o preço dele em 20%.</p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm">
+                        <div class="text-4xl mb-6">🧬</div>
+                        <h4 class="font-black text-xl mb-4 uppercase italic">03. Engenharia de Menu (Nudge)</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">A ciência de agrupar acompanhamentos. Vou te mostrar como as fotos de batatas e bebidas trincando, geradas no arsenal, podem dobrar seu ticket médio no checkout.</p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm">
+                        <div class="text-4xl mb-6">✍️</div>
+                        <h4 class="font-black text-xl mb-4 uppercase italic">04. Copywriting de Cardápio</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Não escreva ingredientes, escreva sensações. Vou te dar os templates de descrição que complementam o visual IA, criando uma armadilha mental imparável.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="oferta" class="py-24 px-4 bg-burger-dark text-white text-center gpu-fix">
-        <div class="max-w-4xl mx-auto border-[10px] border-orange-600/20 p-8 md:p-24 rounded-[60px] bg-black shadow-[0_0_100px_rgba(251,146,60,0.2)]">
             
-            <div class="mb-8 inline-block bg-red-600/20 border border-red-600 px-6 py-2 rounded-full">
-                <p class="text-red-500 font-black text-sm uppercase tracking-widest">
-                    ⚠️ Oferta expira em: <span id="timer">09:57</span>
-                </p>
+            <div class="mt-12 bg-orange-neon/10 border-2 border-dashed border-orange-neon p-8 rounded-[40px] text-center">
+                <p class="font-black text-orange-700 uppercase">Este bônus sozinho vale mais que o dobro do curso. <br class="hidden md:block"> Ele será o seu diferencial contra toda a concorrência da sua cidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-burger-dark text-white">
+        <div class="max-w-6xl mx-auto text-center mb-20">
+            <h2 class="font-impact text-4xl md:text-7xl mb-6 uppercase tracking-tighter">O ARSENAL <span class="text-orange-neon">COMPLETO</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white/5 p-10 rounded-[40px] border border-white/10 hover:border-orange-neon/50 transition">
+                <div class="text-5xl mb-6">🍔</div>
+                <h3 class="text-2xl font-black mb-4 uppercase">150+ Prompts Burger</h3>
+                <p class="text-slate-400 text-sm mb-6">Maillard perfeito, gordura brilhante e queijos que parecem lava. Copie e cole.</p>
+                <span class="text-orange-neon font-bold text-xs">INCLUSO</span>
+            </div>
+            <div class="bg-white/5 p-10 rounded-[40px] border border-white/10 hover:border-orange-neon/50 transition">
+                <div class="text-5xl mb-6">🎬</div>
+                <h3 class="text-2xl font-black mb-4 uppercase">Pack Motion Pro</h3>
+                <p class="text-slate-400 text-sm mb-6">Vídeos de queijo esticando e vapor saindo. O terror dos Reels e do TikTok.</p>
+                <span class="text-orange-neon font-bold text-xs">INCLUSO</span>
+            </div>
+            <div class="bg-white/5 p-10 rounded-[40px] border border-white/10 hover:border-orange-neon/50 transition">
+                <div class="text-5xl mb-6">📸</div>
+                <h3 class="text-2xl font-black mb-4 uppercase">Guia Upscale 8K</h3>
+                <p class="text-slate-400 text-sm mb-6">Transforme suas gerações em arquivos gigantes para banners e fachadas.</p>
+                <span class="text-orange-neon font-bold text-xs">INCLUSO</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" class="py-24 px-4 bg-white text-center">
+        <div class="max-w-4xl mx-auto border-[10px] border-slate-100 p-8 md:p-24 rounded-[60px] bg-white shadow-2xl">
+            <div class="mb-8 inline-block bg-red-600 text-white px-6 py-2 rounded-full animate-pulse">
+                <p class="font-black text-sm uppercase tracking-widest">⚠️ Acesso Vitalício + Bônus Cardápio</p>
             </div>
 
-            <h2 class="font-impact text-4xl md:text-8xl mb-6 uppercase tracking-tighter italic">ASSUMA O <br> <span class="text-orange-neon">CONTROLE</span></h2>
-            <p class="text-orange-300 font-bold mb-12 tracking-widest uppercase text-xs md:text-sm">Arsenal 150 Prompts • Masterclass • Bônus VIP</p>
-
+            <h2 class="font-impact text-4xl md:text-8xl mb-6 uppercase tracking-tighter italic">SÓ HOJE POR</h2>
+            
             <div class="mb-16">
-                <span class="text-slate-600 line-through text-2xl md:text-3xl font-bold">De R$ 297,00</span>
-                <div class="text-7xl md:text-9xl font-black text-white mt-4 leading-none">R$ 147,<span class="text-3xl md:text-4xl text-orange-neon font-black">00</span></div>
-                
-                <p class="mt-8 text-xl text-orange-200">
-                    <a href="https://kiwify.app/KEzK2gq" class="hover:text-white hover:underline transition-all duration-300">
-                        Ou leve o <strong>Combo Império</strong> (Os 4 Packs) por apenas <strong>R$ 397</strong>
-                    </a>
-                </p>
+                <span class="text-slate-400 line-through text-2xl font-bold">De R$ 297,00</span>
+                <div class="text-7xl md:text-9xl font-black text-slate-900 mt-4 leading-none">R$ 147,<span class="text-3xl md:text-4xl text-orange-neon font-black">00</span></div>
+                <p class="mt-4 text-slate-500 font-bold uppercase tracking-widest">Ou 12x de R$ 14,67</p>
             </div>
 
-            <a href="https://pay.kiwify.com.br/DV99VcF" class="block w-full bg-orange-neon hover:bg-orange-400 hover:scale-105 transition-all text-black font-black text-2xl md:text-5xl py-8 md:py-10 rounded-full shadow-2xl uppercase tracking-tighter">
-                QUERO O MEU ARSENAL AGORA!
+            <a href="https://pay.kiwify.com.br/DV99VcF" class="block w-full bg-orange-neon hover:scale-105 transition-all text-black font-black text-2xl md:text-5xl py-8 md:py-10 rounded-full shadow-[0_20px_40px_rgba(251,146,60,0.4)] uppercase tracking-tighter">
+                QUERO MEU ARSENAL AGORA!
             </a>
 
-            <div class="mt-8 flex justify-center items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all">
-                <img src="https://logodownload.org/wp-content/uploads/2020/02/pix-bc-logo.png" alt="Pix" class="h-4 md:h-5">
-                <img src="https://logodownload.org/wp-content/uploads/2014/07/visa-logo-1.png" alt="Visa" class="h-4 md:h-5">
-                <img src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-7.png" alt="Mastercard" class="h-4 md:h-5">
-                <div class="h-5 w-px bg-slate-700"></div>
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter italic">Compra 100% Segura</span>
-            </div>
-
-            <div class="mt-12 flex flex-wrap justify-center gap-6 md:gap-10 text-slate-500 font-black text-[10px] md:text-xs uppercase tracking-widest">
-                <span>🛡️ Garantia de 7 Dias</span>
-                <span>🚀 Entrega Imediata</span>
-                <span>💳 12x no Cartão ou Pix</span>
+            <div class="mt-10 flex justify-center items-center gap-6 opacity-60">
+                <img src="https://logodownload.org/wp-content/uploads/2020/02/pix-bc-logo.png" alt="Pix" class="h-5">
+                <img src="https://logodownload.org/wp-content/uploads/2014/07/visa-logo-1.png" alt="Visa" class="h-5">
+                <img src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-7.png" alt="Mastercard" class="h-5">
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center text-slate-700 bg-black">
-        <p class="font-bold mb-4 uppercase tracking-widest opacity-50 text-xs">Mestre do Prompt I.A. &copy; 2026</p>
+    <footer class="py-12 text-center text-slate-400 bg-burger-dark">
+        <p class="text-xs font-bold uppercase tracking-widest italic">Mestre do Prompt I.A. &copy; 2026 - Todos os direitos reservados</p>
     </footer>
 
     <div class="mobile-cta">
-        <a href="https://pay.kiwify.com.br/DV99VcF" class="block bg-orange-neon text-black font-black text-center py-4 rounded-full uppercase tracking-tighter text-sm">
+        <a href="https://pay.kiwify.com.br/DV99VcF" class="block bg-orange-neon text-black font-black text-center py-5 rounded-full uppercase shadow-2xl border-2 border-black/10">
             🔥 QUERO MEU ARSENAL AGORA!
         </a>
     </div>
 
     <script>
-        // Lógica do Timer
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-                display.textContent = minutes + ":" + seconds;
-                if (--timer < 0) { timer = duration; }
-            }, 1000);
+        function carregarVideo() {
+            var videoId = "V-R8g2gAuVM"; 
+            var container = document.getElementById('video-wrapper');
+            container.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            container.removeAttribute("onclick");
         }
-        window.onload = function () {
-            var tenMinutes = 60 * 10,
-            display = document.querySelector('#timer');
-            startTimer(tenMinutes, display);
-        };
     </script>
 
 </body>
